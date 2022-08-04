@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    height: 80px;  /* adjust the sive of the nav bar to make its total height 80px */
+    display: flex; /* set the flexible length of the nav bar*/
+}
+
+img { /* no need to put a period before image because it is not a class and no need for a hashtag because it is not an ID it is an asset tag which will cover all images on the site*/
+width: 100%;
+
+}
+.nav__container { /* used to contain the width of the nav bar*/
+width: 100%; /* makes everything look better on the page at different sizes*/
+max-width: 1200px; /* the nav bar  caontainer will stretch no more than 1200 pixels */
+padding: 0 24px; /* give space to the sides of the elements to keep the off the edges*/
+display: flex;  /* allows the use of Justify and sets the flixible lenght of a property*/
+justify-content: space-between; /* seperates the list items from the image in the nav bar sending the list items to the opposite side necause JCSB evenly splits elements ie. the logo and the list */
+align-items: center; /* to center the items in the container */
+margin: 0 auto; /* used to move things off of the edges of the web page */
+}
+
+.purple {
+    color: #7342d6; /* class is attatched to my span tag which changes the color of everything in it to the color coded in*/
+}
+
+.logo {
+    width: 160px; /* changes the size of the logo*/
+}
+ul {
+    display: flex; /* this will bring the unordered list itmes side by side instead of have ing them stacked on top of each other.*/
+}
+
+li{
+list-style-type: none; /* removes the bullet points form the list itmes in thte nav bar*/
+}
+
+.nav__link {
+    margin-left: 16px; /* wills separate the list items from one another*/
+    text-decoration: none; /* removes the underline from the list items*/
+    font-size: 20px;
+    color: #7342d6;
+    font-weight: bold; /* makes the list items bold*/
+    padding: 8px; /* add padding to make space for the border around the words without the border would be touching the words with no space*/
+}
+
+.nav__link:hover { /* will add an effect every time the links are being hovered over*/
+text-decoration: underline; /* will underline the list itmes when hovered over*/
+}
+
+.nav__link--primary { /* only effects the list imtem with this class attatched to it*/
+    border: 2px solid #7342d6; /* adds a box around anything that has this class attached to it in the HTML*/
+    border-radius: 4px; /* gives rounded corners the the border insstead of sharp edges*/
+}
+
+.nav__link--primary:hover { /* pacement matters since this has to effect another class already listed in the CSS. It has to come after the the first class mentioned or you can use the tag !important which will give it priority over all else*/
+    text-decoration: none;  /* this stops the list items with this class ".nav__link--primary" from have the hover effect*/
+}
+
+#landing { /* we use # instead of a "." because landing is a "ID" not a "class" */
+    background-color: rgba(115, 66, 214, 0.1);
+}
+
+header { /* need to go and add <header> into HTML */
+    height: calc(100vh - 80px); /* this will stretch the color of the nav bar down the legth of the page with the code calc(100vh) we add (- 80px) to subtract the size of the nav bar so the colors are not stacked*/
+}
+
+.header__container { /* this will contain the area that holds all of the main contind in the header*/
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* will put all assets in this container on top of each other lik a column*/
+
+}
+
+h1 { 
+font-size: 56px;
+color: #7342d6;
+margin-bottom: 24px; /* gives space at the bottom*/
+text-align: center; /*moves text to the middle of the page*/
+}
