@@ -1,4 +1,5 @@
 /* all paddings and margins are divisible by 8  meaning 8-16-24-32-40 ect. */
+/* z index is basically layering of things*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
@@ -20,6 +21,11 @@ max-height: 50vh; /* adding 50vh will make it so it never goes above 50% of the 
 padding: 20px; /* helps make the image even smaller*/
 
 }
+
+p {
+line-height: 1.5;
+}
+
 .nav__container { /* used to contain the width of the nav bar*/
 width: 100%; /* makes everything look better on the page at different sizes*/
 max-width: 1200px; /* the nav bar  caontainer will stretch no more than 1200 pixels */
@@ -125,6 +131,7 @@ button:active { /* tells the button to do this action when it is active or in ot
 
 .header__img--wrapper {
     padding: 20px;
+    z-index: 2; /* will stop the wave from coming through the image on smaller laptop screens due to the z-index being larger but now z-index of 2 is bigger the z-index of 1 in the before highlight tag*/
 }
 
 
@@ -140,7 +147,36 @@ padding: 56px 0;
 }
 
 /* Highlights*/
+#highlights {
+    position: relative; /* added so that the before tage can have something to be absolute to meaning so it can stick to the right placeistead of being attached to the nave bar ot the top of the header*/
+}
+#highlights:before { /* the tag before will put everything in these brackets before the Highlights section*/
+background: url('assets/wave.svg'); /* this will grab the file in the () and make it the background*/
+position: absolute; /* makse it so the waves will not move form this location but size can change with the screen*/
+content: "";
+width: 101vw;
+height: 12vw; /* this makes it so the height gets bigger the wider the page gets*/
+top: 1px; /* this will make it hang over the parent container by just 1px*/
+left: 0;
+z-index: 1; /* this is basically layer stat it changes the level of the layer with 1 being the furthest back*/
+background-size: cover; 
+background-repeat: no-repeat; /* this stretches it across the whole site*/
+transform: translateY(-100%); /* this moves it up to the top of the parent container*/
+}
 
+#highlights::after { /* the tag after will put everything in these brackets after the Highlights section*/
+    background: url('assets/wave.svg'); /* this will grab the file in the () and make it the background*/
+    position: absolute; /* makse it so the waves will not move form this location but size can change with the screen*/
+    content: "";
+    width: 101vw;
+    height: 12vw; /* this makes it so the height gets bigger the wider the page gets*/
+    bottom: 1px; /* this will make it hang over the parent container by just 1px*/
+    left: 0;
+    z-index: 1; /* this is basically layer stat it changes the level of the layer with 1 being the furthest back*/
+    background-size: cover; 
+    background-repeat: no-repeat; /* this stretches it across the whole site*/
+    transform: translateY(100%); /* this moves it up to the bottom of the parent container*/
+    }
 
 .highlight__wrapper {
     display: flex; /* gets the separate listings side by side*/
@@ -160,17 +196,25 @@ padding: 56px 0;
 
 .highlight__para {
     text-align: center;/* will center the actual text*/
-
+    max-width: 280px;  /* will not allow the width past 280px*/
  }
 
 .highlight__img {
-border: 2px #7342d6;
+border: 2px #7342d685;
+color: #7342d6;
+border-style: solid; 
 width: 100px;
 height: 100px;
 display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 4px;
-font-size: 32px;
+font-size: 32px; 
+margin-bottom: 24px;
+}
+
+.higlight__subtitle {
+    font-size: 20px;
+    margin-bottom: 16px;
 }
 
