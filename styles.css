@@ -138,6 +138,7 @@ button:active { /* tells the button to do this action when it is active or in ot
 
 .container {
 padding: 56px 0;
+z-index: 2;
 }
 
 .row {
@@ -149,6 +150,7 @@ padding: 56px 0;
 /* Highlights*/
 #highlights {
     position: relative; /* added so that the before tage can have something to be absolute to meaning so it can stick to the right placeistead of being attached to the nave bar ot the top of the header*/
+    max-width: 100vw;
 }
 #highlights:before { /* the tag before will put everything in these brackets before the Highlights section*/
 background: url('assets/wave.svg'); /* this will grab the file in the () and make it the background*/
@@ -175,12 +177,12 @@ transform: translateY(-100%); /* this moves it up to the top of the parent conta
     z-index: 1; /* this is basically layer stat it changes the level of the layer with 1 being the furthest back*/
     background-size: cover; 
     background-repeat: no-repeat; /* this stretches it across the whole site*/
-    transform: translateY(100%); /* this moves it up to the bottom of the parent container*/
+    transform: translateY(100%) rotate(180deg); /* this moves it up to the bottom of the parent container*/
     }
 
 .highlight__wrapper {
     display: flex; /* gets the separate listings side by side*/
-    
+    justify-content: center;
   
     
 }
@@ -218,3 +220,10 @@ margin-bottom: 24px;
     margin-bottom: 16px;
 }
 
+
+/*feature*/
+
+
+#features {
+    background-color: rgba(115, 66, 214, 0.1);
+}
