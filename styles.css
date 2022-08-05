@@ -9,6 +9,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw; /* added to help remove spacing on the sides*/
+    overflow-x: hidden;
+}
 nav {
     height: 80px;  /* adjust the sive of the nav bar to make its total height 80px */
     display: flex; /* set the flexible length of the nav bar*/
@@ -21,6 +29,11 @@ max-height: 50vh; /* adding 50vh will make it so it never goes above 50% of the 
 padding: 20px; /* helps make the image even smaller*/
 
 }
+
+a {
+    text-decoration: none; 
+}
+
 
 p {
 line-height: 1.5;
@@ -72,6 +85,52 @@ text-decoration: underline; /* will underline the list itmes when hovered over*/
 .nav__link--primary:hover { /* pacement matters since this has to effect another class already listed in the CSS. It has to come after the the first class mentioned or you can use the tag !important which will give it priority over all else*/
     text-decoration: none;  /* this stops the list items with this class ".nav__link--primary" from have the hover effect*/
 }
+
+.btm__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+}
+
+.menu__backdrop{
+position: absolute; /* makes it so nothing elsei is affected by the burger*/
+background-color: #242424;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 100;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px;
+}
+
+.menu__link {
+    font-size: 40px;
+    color: white;
+}
+
+.btn__mnenu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: white;
+}
+
+/* Landing*/
 
 #landing { /* we use # instead of a "." because landing is a "ID" not a "class" */
     background-color: rgba(115, 66, 214, 0.1);
@@ -126,6 +185,7 @@ button:active { /* tells the button to do this action when it is active or in ot
     font-size: 20px;
     border-radius: 4px; /* rounds the edges the higher the number th e more dramatic the round*/
     border: none;
+    margin: 0 auto;
     
 }
 
@@ -147,10 +207,20 @@ z-index: 2;
  margin: 0 auto; /* centers the item or element horizontally*/
 }
 
+.row__column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-cursor{
+cursor: not-allowed;
+}
+
 /* Highlights*/
 #highlights {
     position: relative; /* added so that the before tage can have something to be absolute to meaning so it can stick to the right placeistead of being attached to the nave bar ot the top of the header*/
-    max-width: 100vw;
+   
 }
 #highlights:before { /* the tag before will put everything in these brackets before the Highlights section*/
 background: url('assets/wave.svg'); /* this will grab the file in the () and make it the background*/
@@ -225,5 +295,95 @@ margin-bottom: 24px;
 
 
 #features {
+  padding-top: 8vw; /* did not use pixels for the height here because the height of the page is base on the verticle width command so VW would give the best look*/
     background-color: rgba(115, 66, 214, 0.1);
+}
+
+.books{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 25%;
+padding: 24px;
+}
+
+.book__img {
+   max-height: 380px; 
+   transition: all 300ms ease; /* makes transitions look smoother*/
+   cursor: not-allowed; /* add the cross out thing to the cursor so people will know they can not click the image and wont thing the page is broken can either use no drop or not allowed it will give the same effect*/
+
+}
+.book_img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.book:hover .book__img { /* will cause the effect under to happen when ever a book is hovered over*/
+    transform: scale(1.03); /* this transition will cause the book to get bigger when someone hovers over it with a mouse*/
+}
+
+.book__title{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.book__title:hover{
+    text-decoration: underline; /* when the book title is hovered over it will underline*/
+    cursor: no-drop;
+}
+
+.book__ratings{
+    margin-bottom: 8px;
+    color: #fabf2a;
+}
+
+.book__price--normal{
+    text-decoration: line-through;
+    padding-right: 6px;
+    color: #bfbfbf;
+}
+
+
+
+/* Footer */
+
+
+#explore {
+    background-color: rgba(115, 66, 214, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer{
+    background-color: #242424;
+}
+ 
+.footer__logo{
+    display: flex;
+}
+
+.footer__logo--img {
+    width: 200px;
+    filter: grayscale(1) invert(1); /* will turn black images white got it form stack overflow*/
+}
+
+
+.footer__list{
+   margin: 24px o; 
+   color: white;
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 32px;
+}
+
+.footer__link {
+padding: 0 8px;
+color: white;
 }
